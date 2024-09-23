@@ -1,0 +1,17 @@
+/* TagButtonStyle.css */
+
+.tagButton {
+    background-color: purple; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 10px; /* Some padding */
+    margin: 10px; /* Some margin */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 5px 7px rgb(0, 0, 0, 0.5); /* Add shadow */
+    transition: all 0.3s; /* Add transition */
+}
+
+.tagButton:hover {
+    background-color: rgb(88,0,88); /* Darker green on hover */
+}
