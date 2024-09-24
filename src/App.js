@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import logo from './logo.svg';
 import './App.css';
 import MyFirstComponent from './MyFirstComponent'; // Importing MyFirstComponent
@@ -5,6 +6,8 @@ import Header from "./header"; // Importing Header
 import Post from './post';
 import SideMenu from './sideMenu';
 import Article from './Article';
+  const showCategories = true;
+
 function App() {
   const MyArticle = ' My Article  rreprp erlerl;ler ;er;;er;l';
   return (
@@ -36,8 +39,8 @@ function App() {
         {/*  side menu container  */}
         <div style={{
             width: "30%",
-        }}>
-        <SideMenu />
+          }}>
+            <AppSideMenu/>
         </div>
           {/* === side menu container === */}
         </div>
@@ -46,5 +49,13 @@ function App() {
     </div>
   );
 }
+function AppSideMenu() {
+  if (showCategories == true) {
+    return <SideMenu />;
+  } else {
+    return null;
+  }
 
+
+}
 export default App;

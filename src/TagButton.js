@@ -1,12 +1,12 @@
 
 import "./TagButtonStyle.css"
-function TagButton({title, children}) {
+export default function TagButton({ title, children }) {
     return (
-        <button className="tagButton">
+        <div>
+            {title == null ? <div></div> : <button className="tagButton">
             {title}
             {children}
-        </button>
+        </button>}
+        </div>
     );
 };
-
-export default TagButton;
