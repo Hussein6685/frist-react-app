@@ -1,13 +1,13 @@
-function Post  () {
+function Post  ({postName = "no name", postBody = "no body"}) {
     return (
         <div style={{
             border: "5px solid teal",
             margin: "25px",
             padding: "10px",
         }}>
-            <h1>Post Title</h1>
+            <h1>{postName}</h1>
             <hr/>
-            <p>This is a post content.</p>
+            <p>{postBody}</p>
         </div>
     );
 };

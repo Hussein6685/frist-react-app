@@ -1,15 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
-import MyFirstComponent from './MyFirstComponent'; // Importing MyFirstComponent
-import Header from "./header"; // Importing Header
-import Post from './post';
-import SideMenu from './sideMenu';
-import Article from './Article';
-function App() {
-  const MyArticle = ' My Article  rreprp erlerl;ler ;er;;er;l';
-  return (
-    <div className="App">
-      <Header/>
+
     <div style={{
         display: "flex",
         justifyContent: "center",
@@ -23,7 +12,7 @@ function App() {
         <div style={{
         width: "70%",
         }}>
-        <Post  postName="academy" postBody="my academy"/>
+        <Post />
         <Post />
         <Post />
         <Post />
@@ -43,8 +32,3 @@ function App() {
         </div>
         {/* === post & side menu container === */}
     </div>
-    </div>
-  );
-}
-
-export default App;
