@@ -10,52 +10,17 @@ import Article from './Article';
 
 function App() {
   const MyArticle = ' My Article  rreprp erlerl;ler ;er;;er;l';
+  const categories = ['Music', 'Sport', 'Movie', 'Tech'];
+  const myCategories = categories.map((category, index) => {
+    // console.log(category);
+    return <h1 key={index}>{category}</h1>
+  });
   return (
-    <div className="App">
-      <Header/>
-    <div style={{
-        display: "flex",
-        justifyContent: "center",
-    }}>
-      {/* post & side menu container */}
-    <div style={{
-        display: "flex",
-        width: "60%",
-    }}>
-        {/* post container */}
-        <div style={{
-        width: "70%",
-        }}>
-        <Post  postName="academy" postBody="my academy"/>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        </div>
-        {/* === post container === */}
-        {/*  side menu container  */}
-        <div style={{
-            width: "30%",
-          }}>
-            <AppSideMenu/>
-        </div>
-          {/* === side menu container === */}
-        </div>
-        {/* === post & side menu container === */}
-    </div>
+    <div style={{background: "black"}}>
+      <ul style={{ background: "white" }}>
+        {showCategories && myCategories}
+      </ul>
     </div>
   );
-}
-function AppSideMenu() {
-  if (showCategories == true) {
-    return <SideMenu />;
-  } else {
-    return null;
-  }
-
-
 }
 export default App;
