@@ -6,7 +6,6 @@ import Header from "./header"; // Importing Header
 import Post from './post';
 import SideMenu from './sideMenu';
 import Article from './Article';
-import MyButton from './myButton';
   const showCategories = true;
 
 function App() {
@@ -36,15 +35,39 @@ function App() {
     return <Post key={post.id} postName={post.postName} postBody={post.postBody} />
   });
   <Header />
-  // const MyArticle = ' My Article  rreprp erlerl;ler ;er;;er;l';
-  // const categories = ['Music', 'Sport', 'Movie', 'Tech'];
-  // const myCategories = categories.map((category, index) => {
-  //   // console.log(category);
-  //   return <h1 key={index}>{category}</h1>
-  // });
+  const MyArticle = ' My Article  rreprp erlerl;ler ;er;;er;l';
+  const categories = ['Music', 'Sport', 'Movie', 'Tech'];
+  const myCategories = categories.map((category, index) => {
+    // console.log(category);
+    return <h1 key={index}>{category}</h1>
+  });
   return (
-    <MyButton />
-
+    <div style={{
+        display: "flex",
+        justifyContent: "center",
+    }}>
+      {/* post & side menu container */}
+    <div style={{
+        display: "flex",
+        width: "60%",
+    }}>
+        {/* post container */}
+        <div style={{
+        width: "70%",
+        }}>
+          {postItems}
+        </div>
+        {/* === post container === */}
+        {/*  side menu container  */}
+        <div style={{
+            width: "30%",
+        }}>
+        <SideMenu />
+        </div>
+          {/* === side menu container === */}
+        </div>
+        {/* === post & side menu container === */}
+    </div>
   );
 }
 export default App;
