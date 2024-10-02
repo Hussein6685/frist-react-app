@@ -7,6 +7,7 @@ import Post from './post';
 import SideMenu from './sideMenu';
 import Article from './Article';
 import MyButton from './myButton';
+import MyInput from './myInput';
   const showCategories = true;
 
 function App() {
@@ -43,7 +44,10 @@ function App() {
   //   return <h1 key={index}>{category}</h1>
   // });
   return (
+    <div>
     <MyButton />
+    <MyInput />
+    </div>
 
   );
 }
