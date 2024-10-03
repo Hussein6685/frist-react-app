@@ -8,6 +8,7 @@ import SideMenu from './sideMenu';
 import Article from './Article';
 import MyButton from './myButton';
 import MyInput from './myInput';
+import MyForm from './myFrom';
   const showCategories = true;
 
 function App() {
@@ -44,9 +45,10 @@ function App() {
   //   return <h1 key={index}>{category}</h1>
   // });
   return (
-    <div>
-    <MyButton />
-    <MyInput />
+    <div className="App" style={{ paddingTop:  "300px"}}>
+    {/* <MyButton />
+    <MyInput /> */}
+      <MyForm />
     </div>
 
   );
