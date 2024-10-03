@@ -8,6 +8,8 @@ export default function MyForm() {
         age: "",
         generalInfo: "",
         isStudent: true,
+        country: "",
+        status: ""
     });
     return (
         <form
@@ -78,6 +80,41 @@ export default function MyForm() {
                 }}
             />
 
+            <hr>
+            </hr>
+
+            <select value={formInput.country} onChange={(event) => {
+                setFormInput({ ...formInput, country: event.target.value });
+            }}
+            >
+                <option>KSA</option>
+                <option>EGP</option>
+                <option>Syria</option>
+            </select>
+
+            <hr></hr>
+            <div>
+                <input
+                    value="student"
+                    type="radio"
+                    name="status"
+                    checked={formInput.status == "student"}
+                    onChange={(event) => {
+                        setFormInput({ ...formInput, status: "student" });
+                    }}
+                    />
+                Student
+                <input
+                    value="teacher"
+                    type="radio"
+                    name="status"
+                    checked={formInput.status == "teacher"}
+                onChange={(event) => {
+                    setFormInput({ ...formInput, status: "teacher" });
+                }}
+                />
+                Teacher
+            </div>
             <hr>
             </hr>
 
