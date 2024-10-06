@@ -57,7 +57,19 @@ function App() {
   ]);
   // const devices = ["laptop", "tablet", "phone", "PC"];
   const devicesList = devices.map((device) => {
-    return <li key={device.id}>{device.name} <button onClick= {() => {handleDeleteDevice(device.id);}}>Delete</button></li>
+    return <li
+      key={device.id}>
+      {device.name}
+      <button
+        onClick={() => { handleDeleteDevice(device.id); }}>
+        Delete
+      </button>
+
+      <button
+        onClick={() => { handleEditDevice(device.id); }}>
+        Edit
+      </button>
+    </li>
   });
   function handleDeleteDevice(id) {
     // alert(id);
@@ -67,6 +79,22 @@ function App() {
     setDevices(newDevices);
     // devices.splice(id, 1);
   }
+
+  function handleEditDevice(id) {
+    const newDevices = devices.map((device) => {
+      if (device.id == id)
+        {
+        return { ...device, name: device.name + "0" };
+      }else {
+        return device;
+      }
+    });
+    setDevices(newDevices);
+    // const device = devices.find((device) => {
+    //   return device.id == id;
+    // });
+  }
+
   function handleAddDevice() {
     setDevices([...devices, { id: nextId, name: devicesNameInPutValue }]);
     nextId++;
