@@ -12,6 +12,9 @@ import { useState } from "react";
 import MyForm from './myFrom';
 const showCategories = true;
 
+
+let nextId = 5;
+
 function App() {
   // const posts = [
   //   {
@@ -46,13 +49,27 @@ function App() {
   //   return <h1 key={index}>{category}</h1>
   // });
   const [devicesNameInPutValue, setDevicesNameInPutValue] = useState("");
-  const [devices, setDevices] = useState(["laptop", "tablet", "phone", "PC"]);
+  const [devices, setDevices] = useState([
+    { id: 1, name:"laptop"},
+    { id: 2, name:"tablet"},
+    { id: 3, name:"phone"},
+    { id: 4, name:"PC"}
+  ]);
   // const devices = ["laptop", "tablet", "phone", "PC"];
   const devicesList = devices.map((device) => {
-    return <li>{device}</li>
+    return <li key={device.id}>{device.name} <button onClick= {() => {handleDeleteDevice(device.id);}}>Delete</button></li>
   });
+  function handleDeleteDevice(id) {
+    // alert(id);
+    const newDevices = devices.filter((device) => {
+      return device.id != id;
+    });
+    setDevices(newDevices);
+    // devices.splice(id, 1);
+  }
   function handleAddDevice() {
-    setDevices([...devices, devicesNameInPutValue]);
+    setDevices([...devices, { id: nextId, name: devicesNameInPutValue }]);
+    nextId++;
     // const newDevices = [...devices];
     // newDevices.push(devicesNameInPutValue);
     // setDevices(newDevices);
