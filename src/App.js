@@ -10,31 +10,38 @@ import MyButton from './myButton';
 import MyInput from './myInput';
 import { useState } from "react";
 import MyForm from './myFrom';
+import LoanForm from './loanForm';
 const showCategories = true;
 
 
 
 function App() {
-
-  const [count, setCount] = useState(0);
-
-  function handlePlusClick() {
-    setCount((c) => {
-      return c + 1;
-    });
-    setCount(count + 1);
-    // setTimeout(() => {
-    //   alert("Hello");
-    //   setCount(count + 1);
-    // }, 2000);
-
-  }
-
   return (
     <div className="App">
-      <h1>The count is: {count} </h1>
-      <button onClick={handlePlusClick}>+</button>
+      <LoanForm />
     </div>
   );
 }
+
+  // const [count, setCount] = useState(0);
+
+  // function handlePlusClick() {
+  //   setCount((c) => {
+  //     return c + 1;
+  //   });
+  //   setCount(count + 1);
+  //   // setTimeout(() => {
+  //   //   alert("Hello");
+  //   //   setCount(count + 1);
+  //   // }, 2000);
+
+  // }
+
+  // return (
+  //   <div className="App">
+  //     <h1>The count is: {count} </h1>
+  //     <button onClick={handlePlusClick}>+</button>
+  //   </div>
+  // );
+
 export default App;
